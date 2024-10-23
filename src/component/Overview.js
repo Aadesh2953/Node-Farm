@@ -11,7 +11,7 @@ function Overview() {
         const response = await fetch("overview");
         const data = await response.json();
         setData([...data]);
-        console.log(data);
+        console.log("data",data.length);
       } catch (err) {
         console.log("error", err);
       }
@@ -27,9 +27,9 @@ function Overview() {
           {data.map((product) => {
             return (
               <Template_Card
-                description={product.description}
-                key={product.id}
-                id={product.id}
+              key={product.id}  
+              description={product.description}
+              id={product.id}
                 name={product.productName}
                 quantity={product.quantity}
                 nutrients={product.nutrients}
